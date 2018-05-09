@@ -1,0 +1,24 @@
+<% include ../partials/header %>
+
+<div class="row">
+
+    <h3 style="text-align: center">Write a new message to <%=user.firstName%></h3>
+    
+    <div style="width:50%; margin:30px auto;">
+    
+        <form action="/users/<%=user._id%>/messages/new" method="POST">
+            <div class="form-group">
+                <textarea class="form-control" name="message[text]"></textarea>
+            </div>
+            <div class="form-group">
+                <button type="submit" class="btn btn-default btn-block">Submit</button>
+            </div>
+            <a href="/users/<%=user.id%>">Go Back</a>
+        </form>       
+        
+    </div>  
+    
+</div> 
+
+
+<% include ../partials/footer %>

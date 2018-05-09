@@ -1,0 +1,40 @@
+<%include ../partials/header%>
+
+<div class="container">
+	<div class="row">
+
+		<div class="col-md-3">
+			<h4>Search for a match</h4>
+			<hr>
+			<div>
+				<form action="/users" method="GET" class="form-inline" id="search-form">
+					<div class="form-group">
+	                    <input type="text" name="search" placeholder="Search name..." class="form-control" id="search-box">
+	                    <input type="submit" value="search" class="btn btn-default">
+					</div>
+				</form>
+			</div>
+		</div>
+
+		<div class="col-md-9">
+			<% users.forEach(function(user){%>
+			  	<div class="col-sm-6 col-md-4 col-sm-12">
+			  	
+				    <div class="thumbnail">
+				      <img src="<%=user.profilePicture%>" alt="...">
+				      <div class="caption">
+				      	<p><h4><%=user.firstName%> <%=user.lastName%></h4></p>			        
+				        <p>Age: <%=user.age%></p>
+				        <p><i class="fas fa-map-marker-alt"></i> <%=user.location%></p>
+				        <a href="users/<%=user.id%>" class="btn btn-default btn-block">View more</a>
+				      </div>
+				    </div>
+
+			  	</div>
+			<%});%>
+		</div>
+	</div>
+</div>
+
+
+<%include ../partials/footer%>

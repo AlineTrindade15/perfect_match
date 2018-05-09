@@ -1,0 +1,127 @@
+<%include ../partials/header%>
+
+<div class="container">
+	<div class="row">
+		<div class="col-md-12">
+			<div class="col-md-5">
+				<img class="img-circle" id="profile-img" src="<%=user.profilePicture%>">				
+			</div>
+			<div class="col-md-7">
+				<h2><%=user.firstName%></h2>	
+				<p id="p-infos"><%=age%> <i class="far fa-heart"></i> <%=user.gender%> <i class="far fa-heart"></i> <%=user.location%></p>	
+				<div class="col-sm-9 info-margin">
+					<%if(currentUser && user.id === currentUser.id || currentUser && currentUser.isAdmin){%>
+						<div><a href="/users/<%=user.id%>/edit" class="btn btn-default btn-lg">Edit profile</a></div>
+					<%}%>
+				</div>
+				<div class="col-sm-3 info-margin">
+					<div class="btn-group btn-group-lg" role="group" aria-label="...">
+					  <a href="/users/<%=user.id%>/messages/new" class="btn btn-default">Send <i class="far fa-envelope"></i></a>
+					</div>
+				</div>
+				<div id="div-gallery">
+					<div class="col-sm-4">
+						<a href="#">
+							<img class="img-circle img-gallery" src="<%=user.picture1%>">
+						</a>						
+					</div>
+					<div class="col-sm-4">
+						<a href="#">
+							<img class="img-circle img-gallery" src="<%=user.picture2%>">
+						</a>						
+					</div>
+					<div class="col-sm-4">
+						<a href="#">
+							<img class="img-circle img-gallery" src="<%=user.picture3%>">
+						</a>						
+					</div>
+				</div>
+			</div>		
+		</div>		
+	</div>
+	<div class="container">
+
+		<ul class="nav nav-tabs">
+		  	<li class="active">
+		    	<a href="#about" data-toggle="tab">ABOUT ME</a>
+		  	</li>
+		  	<li><a href="#messages" data-toggle="tab"><i class="far fa-envelope"></i> MESSAGES</a></li>
+		</ul>
+
+		<div class="tab-content">
+		   	<div id="about" class="tab-pane active">
+
+				<div class="row">
+					<div class="col-md-8">
+						<div class="aboutMe-tab">
+							<h4>About me</h4>
+							<div><%=user.aboutMe%></div>
+						</div>
+						<div class="aboutMe-tab">
+							<h4>What do I do</h4>
+							<div><%=user.whatIDo%></div>
+						</div>
+						<div class="aboutMe-tab">
+							<h4>What I enjoy</h4>
+							<div><%=user.whatILike%></div>
+						</div>
+					</div>
+					<div class="col-md-4">
+						<div class="aboutMe-tab">
+							<h4>Details</h4>
+							<div class="col-sm-4">
+								<ul>
+									<li>Profession:</li>
+									<li>Orientation:</li>
+									<li>Height:</li>
+									<li>Smoke:</li>
+									<li>Children:</li>
+								</ul>
+							</div>
+							<div class="col-sm-8">
+								<ul>
+									<li><%=user.profession%></li>
+									<li><%=user.orientation%></li>
+									<li><%=user.height%></li>
+									<li><%=user.smoke%></li>
+									<li><%=user.children%></li>
+								</ul>
+							</div>
+						</div>
+					</div>
+
+				</div>		    	
+		   	</div>
+
+		   	<div id="messages" class="tab-pane">
+				<div class="well">		    		
+		    		<div class="row">
+		    		
+		    			<%user.messages.forEach(function(message){%>
+		    				<div class="message-div">
+				    			<div class="col-md-3">
+				    				<img class="img-circle" id="message-photo" src="<%=message.author.profilePicture%>">
+				    			</div>
+				    			<div class="col-md-7">
+				    				<p><%=message.author.username%></p>
+				    				<p><%=message.text%></p>	    				
+				    			</div>
+				    			<div class="col-md-2">
+									  	<a href="/users/<%=user.id%>/messages/<%=message.id%>/edit" class="btn btn-default">Edit</i></a>
+									  	<form class="delete_form" action="/users/<%=user.id%>/messages/<%=message.id%>/?_method=DELETE" method="POST">
+									  		<input type="submit" class="btn btn-default" value="Delete">
+									  	</form>
+									</div>  				
+				    			</div>
+				    			<hr>		    		
+			    			</div>
+		    			<%});%>
+		    			
+		    		</div>		    	
+				</div>	
+		   	</div>
+		</div>
+
+</div>
+
+<%include ../partials/footer%>

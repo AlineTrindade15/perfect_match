@@ -1,0 +1,30 @@
+<%include partials/header%>
+
+<div class="row text-center">
+	<i class="fas fa-user-circle fa-6x icon-color"></i>
+	<h1>Create a New Account</h1>
+	<div>
+		<form action="/register" method="POST">
+
+			<div class="form-group">
+				<input class="form-control" type="text" name="username" placeholder="Username" minlength="4" maxlength="15" required>
+			</div>
+			<div class="form-group">
+				<input class="form-control" type="email" name="email" placeholder="E-mail" required>
+			</div>
+			<div class="form-group">
+				<input class="form-control" type="password" name="password" placeholder="Password" minlength="6" maxlength="15" required>
+			</div>
+			<div class="form-group">
+				<input class="form-control" type="password" name="confirm" placeholder="Confirm password" minlength="6" maxlength="15" required>
+			</div>
+			<div class="form-group">
+				<input class="btn btn-secondary btn-lg btn-block" type="submit" value="Submit">
+			</div>
+
+			<p>Already on Perfect Match? <a href="/login">Sign in</a></p>
+		</form>
+	</div>
+</div>
+
+<%include partials/footer%>

@@ -1,0 +1,126 @@
+<%include ../partials/header%>
+
+<div>
+	<h3 class="">Edit Profile</h3>
+  <hr>
+
+	<form class="form-horizontal" action="/users/<%=user._id%>/?_method=PUT" method="POST">
+		
+		<div class="col-md-6">
+		<h4>Basic's</h4>
+  		<div class="form-group">
+    		<label for="firstName" class="col-sm-3 control-label">First Name</label>
+    		<div class="col-sm-7">
+      			<input type="text" class="form-control" name="user[firstName]" value="<%=user.firstName%>">
+    		</div>
+  		</div>
+  		<div class="form-group">
+    		<label for="lastName" class="col-sm-3 control-label">Last Name</label>
+    		<div class="col-sm-7">
+      			<input type="text" class="form-control" name="user[lastName]" value="<%=user.lastName%>">
+    		</div>
+  		</div>
+    	<div class="form-group">
+    		  <label for="gender" class="col-sm-3 control-label">Gender</label>
+          <div class="col-md-7">
+            <div class="radio">
+              <label>
+                <input type="radio" name="user[gender]" id="genderRadios1" value="Woman" checked>Woman
+              </label>
+            </div>
+            <div class="radio">
+              <label>
+                <input type="radio" name="user[gender]" id="genderRadios2" value="Men">Men
+              </label>
+            </div>
+          </div>
+  		</div>	
+   		<div class="form-group">
+    		<label for="age" class="col-sm-3 control-label">Birth</label>
+    		<div class="col-sm-7">
+      			<input type="date" class="form-control" name="user[birth]" value="<%=user.birth%>">
+    		</div>
+  		</div>
+    	<div class="form-group">
+    		<label for="location" class="col-sm-3 control-label">Location</label>
+    		<div class="col-sm-7">
+      			<input type="text" class="form-control" name="user[location]" value="<%=user.location%>">
+    		</div>
+  		</div>
+     	<div class="form-group">
+    		<label for="profilePicture" class="col-sm-3 control-label">Profile picture</label>
+    		<div class="col-sm-7">
+      			<input type="text" class="form-control" name="user[profilePicture]" value="<%=user.profilePicture%>">
+    		</div>
+  		</div>
+  		<div class="form-group">
+    		<label class="col-sm-3 control-label">Other pictures</label>
+    		<div class="col-sm-7">
+      			<input type="text" class="form-control" name="user[picture1]" value="<%=user.picture1%>">
+      			<input type="text" class="form-control" name="user[picture2]" value="<%=user.picture2%>">
+      			<input type="text" class="form-control" name="user[picture3]" value="<%=user.picture3%>">
+    		</div>
+  		</div>
+
+  		<h4>Details</h4>
+  		<div class="form-group">
+    		<label for="profession" class="col-sm-3 control-label">Profession</label>
+    		<div class="col-sm-7">
+      			<input type="text" class="form-control" name="user[profession]" value="<%=user.profession%>">
+    		</div>
+  		</div>
+  		<div class="form-group">
+    		<label for="orientation" class="col-sm-3 control-label">Orientation</label>
+    		<div class="col-sm-7">
+      			<input type="text" class="form-control" name="user[orientation]" value="<%=user.orientation%>">
+    		</div>
+  		</div>
+   		<div class="form-group">
+    		<label for="height" class="col-sm-3 control-label">Height</label>
+    		<div class="col-sm-7">
+      			<input type="text" class="form-control" name="user[height]" value="<%=user.height%>">
+    		</div>
+  		</div>
+   		<div class="form-group">
+    		<label for="smoke" class="col-sm-3 control-label">Smoke</label>
+    		<div class="col-sm-7">
+      			<input type="text" class="form-control" name="user[smoke]" value="<%=user.smoke%>">
+    		</div>
+  		</div> 
+  		<div class="form-group">
+    		<label for="children" class="col-sm-3 control-label">Children</label>
+    		<div class="col-sm-7">
+      			<input type="text" class="form-control" name="user[children]" value="<%=user.children%>">
+    		</div>
+  		</div> 		
+  		</div>
+  		<div class="col-md-6">
+  		<h4>About me</h4>
+     	<div class="form-group">
+    		<label for="aboutMe" class="col-sm-3 control-label">About Me</label>
+    		<div class="col-sm-7">
+      			<textarea name="user[aboutMe]"><%=user.aboutMe%></textarea>
+    		</div>
+  		</div>
+      	<div class="form-group">
+    		<label for="whatIDo" class="col-sm-3 control-label">What do I do</label>
+    		<div class="col-sm-7">
+      			<textarea name="user[whatIDo]"><%=user.whatIDo%></textarea>
+    		</div>
+  		</div>
+      	<div class="form-group">
+    		<label for="whatILike" class="col-sm-3 control-label">What I enjoy</label>
+    		<div class="col-sm-7">
+      			<textarea name="user[whatILike]"><%=user.whatILike%></textarea>
+    		</div>
+  		</div>  		
+  		<div class="form-group text-right">
+    		<div class="col-sm-12 col-sm-10">
+      			<button id="edit-form-button" type="submit" class="btn btn-primary">Update Profile</button>    			
+    		</div>
+  		</div>
+	</form>
+  <a href="/">Go back</a>
+</div>
+
+<%include ../partials/footer%>

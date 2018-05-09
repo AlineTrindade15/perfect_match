@@ -1,0 +1,24 @@
+<%include partials/header%>
+
+<div class="row text-center">
+	<i class="fas fa-user-circle fa-6x icon-color"></i>
+	<h1>Sign in</h1>
+	<div>
+		<form action="/login" method="POST">
+
+			<div class="form-group">
+				<input class="form-control" type="text" name="username" placeholder="Username">
+			</div>
+			<div class="form-group">
+				<input class="form-control" type="password" name="password" placeholder="Password">
+			</div>
+			<div class="form-group">
+				<input class="btn btn-secondary btn-lg btn-block" type="submit" value="Submit">
+			</div>
+
+			<p>Don't have a account? <a href="/register">Register</a></p>
+		</form>
+	</div>
+</div>
+
+<%include partials/footer%>

@@ -1,0 +1,102 @@
+/* users - home */
+
+body{
+	color: #737373;
+}
+
+.thumbnail {
+  width: 18em;
+}
+
+li{
+	list-style-type: none;
+}
+
+#search-form{
+	width: 100%;
+}
+
+
+
+
+/*=========USER PROFILE ========*/
+#profile-img{
+	max-width: 28em;
+}
+
+#p-infos{
+	word-spacing: 7px;
+}
+
+.thumbnail-profile{
+	width: 12em;
+	height: 8em;
+}
+
+.img-gallery{
+	width: 13em;
+	height: 13em;
+	margin-top: 4em;
+}
+
+.info-margin{
+	margin-top: 20px;
+}
+
+.added-gallery{
+	width: 5em;
+	height: 5em;
+}
+
+.aboutMe-tab{
+	padding: 10px 0;
+}
+
+.nav-tabs{
+	margin-top: 3em;
+}
+
+.message-div{
+	height: 6em;
+}
+
+#message-photo{
+	width: 5em;
+	height: 5em;
+	float: right;
+}
+
+.delete_form{
+	display: inline;
+}
+
+
+
+
+/*==========EDIT USER PROFILE ======*/
+.form-horizontal{
+	width: 100%;
+}
+
+textarea{
+	width: 100%;
+	height: 11em;
+}
+
+
+/* sign up */
+
+form{
+	width: 40%;
+	margin: auto;
+}
+
+.icon-color{
+	color: #ffd699;
+}
+
+
+
+
+
+
